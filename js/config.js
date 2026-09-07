@@ -19,6 +19,6 @@ window.SITE_CONFIG = {
   /* ----- Visitor insight (optional) — PostHog --------------
      Paste your PostHog Project API key (starts "phc_...") and
      set the host to your region. Blank key = nothing loads. */
-  posthogKey: "",
+  posthogKey: "phc_kAX3LZcCgwwuuz7db9ZPnu7atWtST5qAEBYTM9b9wnSZ",
   posthogHost: "https://us.i.posthog.com",
 };
