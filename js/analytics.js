@@ -1,42 +1,69 @@
 /* ============================================================
-   Lightweight, optional analytics.
-   - If SITE_CONFIG.gaMeasurementId is blank, NOTHING loads and
+   Optional analytics — PostHog.
+   - If SITE_CONFIG.posthogKey is blank, NOTHING loads and
      track() quietly does nothing.
-   - If it is set, we load Google Analytics 4 and send a handful
-     of named events so Dana can see:
-       * which tutors get viewed most      -> "view_tutor"
-       * which subjects parents filter for -> "select_subject"
-       * how many start vs finish a booking-> "begin_booking" / "submit_booking"
-       * repeat families                   -> "returning" param on submit_booking
-   No names, emails or phone numbers are ever sent to analytics.
+   - If it is set, we load posthog-js and send a handful of
+     named events so Dana can see:
+       view_tutor      -> which tutor profiles get looked at
+       select_subject  -> which subjects parents filter for
+       begin_booking   -> someone started the booking form
+       submit_booking  -> someone finished it (returning: Yes/No)
+     Page views are captured automatically (used for the
+     "looked but didn't book" funnel).
+   Autocapture and session recording are turned OFF. No names,
+   emails or phone numbers are ever sent to analytics.
    ============================================================ */
 (function () {
-  var id =
-    (window.SITE_CONFIG && window.SITE_CONFIG.gaMeasurementId || "").trim();
+  var cfg = window.SITE_CONFIG || {};
+  var key = (cfg.posthogKey || "").trim();
+  var host = (cfg.posthogHost || "https://us.i.posthog.com").trim();
 
-  if (!id) {
+  /* Not configured -> track() is a no-op, nothing else happens. */
+  if (!key) {
     window.track = function () {};
     return;
   }
 
+  /* Queue any events fired before the library finishes loading. */
+  var queue = [];
+  window.track = function (name, params) {
+    queue.push([name, params]);
+  };
+
   var s = document.createElement("script");
   s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
-  document.head.appendChild(s);
+  /* posthog serves its browser bundle from a "-assets" host. */
+  s.src = host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js";
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", id, { anonymize_ip: true });
-
-  window.track = function (eventName, params) {
+  s.onload = function () {
     try {
-      gtag("event", eventName, params || {});
+      window.posthog.init(key, {
+        api_host: host,
+        autocapture: false,
+        disable_session_recording: true,
+        capture_pageview: true,
+        capture_pageleave: true,
+        persistence: "localStorage+cookie",
+      });
+      window.track = function (name, params) {
+        try {
+          window.posthog.capture(name, params || {});
+        } catch (e) {
+          /* never let analytics break the page */
+        }
+      };
+      queue.forEach(function (a) {
+        window.track(a[0], a[1]);
+      });
+      queue.length = 0;
     } catch (e) {
-      /* never let analytics break the page */
+      window.track = function () {};
     }
   };
+
+  s.onerror = function () {
+    window.track = function () {};
+  };
+
+  document.head.appendChild(s);
 })();
