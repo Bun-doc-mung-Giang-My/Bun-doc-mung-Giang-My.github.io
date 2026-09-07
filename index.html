@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{business} — friendly one-on-one tutoring</title>
+  <meta name="description" content="Warm, one-on-one tutoring for kids. Browse our tutors, pick a subject and time, and send a booking request.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#e07a5f"/><circle cx="32" cy="26" r="12" fill="#fbf1e6"/><path d="M14 50c4-9 12-13 18-13s14 4 18 13z" fill="#fbf1e6"/></svg>
+        <span data-business-name>Bright Path Tutoring</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="tutors.html">Our tutors</a></li>
+        <li><a class="btn btn-primary" href="booking.html">Book a session</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <h1>Friendly, one-on-one tutoring for your&nbsp;kid</h1>
+          <p class="lede">We're a small team of six tutors who work closely with families. Browse our tutors, pick a subject and a time that suits you, and send a request &mdash; Dana confirms every booking personally.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tutors.html">Meet our tutors</a>
+            <a class="btn btn-ghost" href="booking.html">Book a session</a>
+          </div>
+        </div>
+        <img class="hero-art" src="images/hero.svg" alt="A tutor and a student working together at a table with books" width="480" height="400">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">How it works</span>
+          <h2>Three simple steps</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <span class="step-num">1</span>
+            <h3>Browse our tutors</h3>
+            <p>See each tutor's subjects, grade levels, hourly rate, and open times. Filter by the subject you need.</p>
+          </div>
+          <div class="card">
+            <span class="step-num">2</span>
+            <h3>Request a time</h3>
+            <p>Pick a tutor and one of their available times, tell us about your student, and send the request. No account needed.</p>
+          </div>
+          <div class="card">
+            <span class="step-num">3</span>
+            <h3>Dana confirms</h3>
+            <p>Every request comes to Dana first. She'll confirm by email or text, then introduce you to your tutor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-warm">
+      <div class="container">
+        <div class="note">
+          <img class="portrait" src="images/dana.svg" alt="Dana, who runs the tutoring service" width="84" height="84">
+          <div>
+            <span class="eyebrow">A note from Dana</span>
+            <h2 class="mt-0">How we work with families</h2>
+            <p>I started this because I wanted tutoring to feel personal &mdash; not like a big test-prep chain. When you send a booking, it comes straight to me. I take a moment to match your family with the right tutor, confirm the time with you, and stay reachable if anything changes.</p>
+            <p>We keep things small on purpose. Six tutors, real relationships, and a focus on helping your child feel confident again.</p>
+            <p class="signature">&mdash; Dana</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Subjects</span>
+          <h2>What our tutors cover</h2>
+          <p class="text-soft">Elementary through high school &mdash; and a little early college.</p>
+        </div>
+        <div class="chip-row" style="justify-content:center">
+          <span class="tag">Math</span>
+          <span class="tag">Reading &amp; Writing</span>
+          <span class="tag">English</span>
+          <span class="tag">Science</span>
+          <span class="tag">Biology</span>
+          <span class="tag">Chemistry</span>
+          <span class="tag">Physics</span>
+          <span class="tag">Spanish</span>
+          <span class="tag">Study Skills</span>
+          <span class="tag">Elementary (General)</span>
+        </div>
+        <div class="cta-row" style="justify-content:center;margin-top:2rem">
+          <a class="btn btn-primary" href="tutors.html">See who's available</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="small">&copy; <span data-year>2026</span> <span data-business-name>Bright Path Tutoring</span>. Made with care for families.</p>
+      <p class="small">Questions? <a data-contact-email href="mailto:dana@example.com">dana@example.com</a> &nbsp;&middot;&nbsp; <span data-contact-phone>(555) 123-4567</span></p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

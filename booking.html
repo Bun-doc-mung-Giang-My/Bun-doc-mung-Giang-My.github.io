@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a session — {business}</title>
+  <meta name="description" content="Request a tutoring session. Choose a tutor and an open time; Dana confirms every booking personally.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#e07a5f"/><circle cx="32" cy="26" r="12" fill="#fbf1e6"/><path d="M14 50c4-9 12-13 18-13s14 4 18 13z" fill="#fbf1e6"/></svg>
+        <span data-business-name>Bright Path Tutoring</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tutors.html">Our tutors</a></li>
+        <li><a class="btn btn-primary" href="booking.html" aria-current="page">Book a session</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Book a session</span>
+          <h1>Request a time</h1>
+          <p class="text-soft">Fill this in and Dana will confirm by email or text. One booking covers one tutor and one time. Not sure who to pick? <a href="tutors.html">Browse the tutors first</a>.</p>
+        </div>
+
+        <div class="form-wrap">
+          <form id="booking-form" class="booking-form" novalidate>
+            <fieldset style="border:0;padding:0;margin:0 0 0.5rem">
+              <legend class="eyebrow" style="padding:0">The session</legend>
+
+              <div class="field">
+                <label for="tutor">Tutor</label>
+                <select id="tutor" name="tutor" required>
+                  <option value="">Choose a tutor…</option>
+                </select>
+              </div>
+
+              <div class="row-2">
+                <div class="field">
+                  <label for="subject">Subject</label>
+                  <select id="subject" name="subject" required>
+                    <option value="">Choose a subject…</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="time">Preferred time</label>
+                  <select id="time" name="time" required disabled>
+                    <option value="">Choose a tutor first</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset style="border:0;padding:0;margin:0.5rem 0 0.5rem">
+              <legend class="eyebrow" style="padding:0">Your details</legend>
+
+              <div class="row-2">
+                <div class="field">
+                  <label for="parent_name">Your name</label>
+                  <input type="text" id="parent_name" name="parent_name" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="parent_phone">Phone</label>
+                  <input type="tel" id="parent_phone" name="parent_phone" autocomplete="tel" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="parent_email">Email</label>
+                <input type="email" id="parent_email" name="parent_email" autocomplete="email" required>
+              </div>
+
+              <div class="row-2">
+                <div class="field">
+                  <label for="student_name">Student's first name</label>
+                  <input type="text" id="student_name" name="student_name" required>
+                </div>
+                <div class="field">
+                  <label for="student_grade">Student's grade</label>
+                  <select id="student_grade" name="student_grade" required>
+                    <option value="">Select…</option>
+                    <option>Kindergarten</option>
+                    <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+                    <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+                    <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+                    <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+                    <option>Early college</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <span style="display:block;font-weight:800;margin-bottom:0.35rem">Have you booked with us before?</span>
+                <div class="radio-row">
+                  <label><input type="radio" name="returning" value="Yes" required> Yes</label>
+                  <label><input type="radio" name="returning" value="No"> No</label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="notes">Anything else we should know? <span class="hint">(optional)</span></label>
+                <textarea id="notes" name="notes"></textarea>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary" style="width:100%">Send booking request</button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p>
+            <p class="text-soft" style="font-size:0.9rem;margin-top:0.75rem">Sending this is a request, not a confirmed booking. Dana will be in touch to confirm.</p>
+          </form>
+
+          <aside class="summary" aria-label="Your booking so far">
+            <h3>Your booking</h3>
+            <dl>
+              <dt>Tutor</dt><dd id="sum-tutor">—</dd>
+              <dt>Rate</dt><dd id="sum-rate">—</dd>
+              <dt>Subject</dt><dd id="sum-subject">—</dd>
+              <dt>Time</dt><dd id="sum-time">—</dd>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="small">&copy; <span data-year>2026</span> <span data-business-name>Bright Path Tutoring</span>. Made with care for families.</p>
+      <p class="small">Questions? <a data-contact-email href="mailto:dana@example.com">dana@example.com</a> &nbsp;&middot;&nbsp; <span data-contact-phone>(555) 123-4567</span></p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 400" role="img" aria-label="Illustration of a tutor and student at a table with books">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbf1e6"/>
+      <stop offset="1" stop-color="#fcf8f2"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="400" fill="url(#sky)"/>
+  <circle cx="380" cy="90" r="46" fill="#f6d9a8"/>
+  <g stroke="#f0c98a" stroke-width="6" stroke-linecap="round">
+    <line x1="380" y1="18" x2="380" y2="2"/>
+    <line x1="432" y1="42" x2="444" y2="30"/>
+    <line x1="328" y1="42" x2="316" y2="30"/>
+  </g>
+  <!-- table -->
+  <rect x="70" y="270" width="340" height="20" rx="6" fill="#e0b48c"/>
+  <rect x="92" y="290" width="16" height="70" rx="4" fill="#cf9b70"/>
+  <rect x="372" y="290" width="16" height="70" rx="4" fill="#cf9b70"/>
+  <!-- books -->
+  <rect x="150" y="246" width="90" height="14" rx="3" fill="#7fa06b"/>
+  <rect x="156" y="232" width="78" height="14" rx="3" fill="#e07a5f"/>
+  <rect x="163" y="218" width="64" height="14" rx="3" fill="#f0c98a"/>
+  <!-- tutor -->
+  <circle cx="130" cy="170" r="30" fill="#e07a5f"/>
+  <rect x="98" y="200" width="64" height="70" rx="24" fill="#c65c42"/>
+  <!-- student -->
+  <circle cx="320" cy="185" r="26" fill="#7fa06b"/>
+  <rect x="292" y="210" width="56" height="60" rx="22" fill="#5f7d50"/>
+  <!-- speech dot -->
+  <circle cx="205" cy="120" r="12" fill="#ffffff" stroke="#ece2d3" stroke-width="3"/>
+  <circle cx="230" cy="110" r="8" fill="#ffffff" stroke="#ece2d3" stroke-width="3"/>
+</svg>

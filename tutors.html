@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our tutors — {business}</title>
+  <meta name="description" content="Meet our six tutors. See subjects, grade levels, hourly rates and open times, then book a session.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#e07a5f"/><circle cx="32" cy="26" r="12" fill="#fbf1e6"/><path d="M14 50c4-9 12-13 18-13s14 4 18 13z" fill="#fbf1e6"/></svg>
+        <span data-business-name>Bright Path Tutoring</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tutors.html" aria-current="page">Our tutors</a></li>
+        <li><a class="btn btn-primary" href="booking.html">Book a session</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Our tutors</span>
+          <h1>Find the right fit for your student</h1>
+          <p class="text-soft">Filter by subject, then choose a tutor to start a booking. Each session is one tutor, one time.</p>
+        </div>
+
+        <div class="filter-bar">
+          <label id="filter-label">Subject:</label>
+          <div class="chip-row" id="subject-chips" role="group" aria-labelledby="filter-label"></div>
+        </div>
+        <p id="result-count" class="text-soft" aria-live="polite" style="margin-bottom:1rem"></p>
+
+        <div class="tutor-grid" id="tutor-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="small">&copy; <span data-year>2026</span> <span data-business-name>Bright Path Tutoring</span>. Made with care for families.</p>
+      <p class="small">Questions? <a data-contact-email href="mailto:dana@example.com">dana@example.com</a> &nbsp;&middot;&nbsp; <span data-contact-phone>(555) 123-4567</span></p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/tutors.js"></script>
+</body>
+</html>
